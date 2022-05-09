@@ -34,20 +34,23 @@ var days = 42;
 };
 
 // The scope of `name` is too tight 
-const logEvent = event => {
-  const name = 'Nala';
+
+// this is globally declared because it is outside of the two functions
+
+
+function logEvent(name, event) {
   console.log(`${name}'s event is: ${event}`);
 };
 
-const logTime = days => {
-  const name = 'Nala';
+function logTime(name, days) {
   console.log(`${name}'s time to train is: ${days} days`);
 };
 
+const name = 'Nala';
 const event = getRandEvent();
 const days = getTrainingDays(event);
 // Define a `name` variable. Use it as an argument after updating logEvent and logTime 
 
 
-logEvent(event);
-logTime(days);
+logEvent(name, event);
+logTime(name, days);
